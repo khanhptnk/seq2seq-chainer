@@ -67,7 +67,7 @@ class GlobalAttention(chainer.Chain):
       v = L.Linear(num_hidden, 1),
     )
     self.encoder_hiddens = None
-    self.w1dt = None
+    self.w1hi = None
 
   def __call__(self, output_hidden, length):
     batch_size = output_hidden.shape[0]
@@ -75,11 +75,11 @@ class GlobalAttention(chainer.Chain):
 
     w2dt = F.broadcast_to(self.w2(output_hidden),
         shape=(length, batch_size, num_hidden))
-    w1dt_plus_w2dt = self.w1dt + w2dt
-    w1dt_plus_w2dt = F.swapaxes(w1dt_plus_w2dt, 0, 1)
-    w1dt_plus_w2dt = F.reshape(w1dt_plus_w2dt, shape=(batch_size * length, -1))
+    w1hi_plus_w2dt = self.w1hi + w2dt
+    w1hi_plus_w2dt = F.swapaxes(w1hi_plus_w2dt, 0, 1)
+    w1hi_plus_w2dt = F.reshape(w1hi_plus_w2dt, shape=(batch_size * length, -1))
 
-    logits = F.reshape(self.v(F.tanh(w1dt_plus_w2dt)), shape=(batch_size, -1))
+    logits = F.reshape(self.v(F.tanh(w1hi_plus_w2dt)), shape=(batch_size, -1))
 
     probs = F.broadcast_to(F.softmax(logits),
         shape=(num_hidden, batch_size, length))
@@ -91,7 +91,7 @@ class GlobalAttention(chainer.Chain):
     length = len(encoder_hiddens)
     batch_size = encoder_hiddens[0].shape[0]
     self.encoder_hiddens = F.stack(encoder_hiddens)
-    self.w1dt = F.reshape(
+    self.w1hi = F.reshape(
         self.w1(F.reshape(self.encoder_hiddens,
             shape=(length * batch_size, -1))),
         shape=(length, batch_size, -1))
