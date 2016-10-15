@@ -7,7 +7,7 @@ The toy task is learning to reverse a string (i.e. given input "abcde", output "
 + Vanilla encoder-decoder model. 
 + Global-attentional encoder-decoder model ([Vinyals et al.](https://arxiv.org/pdf/1412.7449v3.pdf))
 
-To run the code, please install Chainer and CuDNN first. Then evoke `main.py`:
+To run the code, please install **Chainer** and **CuDNN** first. Then evoke `main.py`:
 ~~~~
 $ python main.py
 ~~~~
