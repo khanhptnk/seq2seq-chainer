@@ -8,9 +8,9 @@ The toy task is learning to reverse a string (i.e. given input "abcde", output "
 + Global-attentional encoder-decoder model. 
 
 Run the program:
-"""
+~~~~
 $ python main.py
-"""
+~~~~
 
 To run with different modes, modify `main.py`. Some notable variables are:
 + DEVICE: the code is set to run on 1 GPU (DEVICE = 0), set DEVICE = -1 to run on CPU. 
