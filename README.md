@@ -13,6 +13,8 @@ $ python main.py
 ~~~~
 
 To run with different modes, modify `main.py`. Some notable variables are:
-+ DEVICE: the code is set to run on 1 GPU (DEVICE = 0), set DEVICE = -1 to run on CPU. 
++ DEVICE: the code is set to run on CPU (DEVICE = -1), set DEVICE = 0 to run on single GPU. 
 + LARGE: size of the data set. 
 + ATTEND: whether to use attention or not. 
+
+If there are any problems, email me at nguyenxuankhanhm@gmail.com
