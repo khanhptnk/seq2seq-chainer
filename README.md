@@ -5,7 +5,7 @@ Implementation of recurrent neural network (RNN) and seq2seq models in [Chainer]
 The toy task is learning to reverse a string (i.e. given input "abcde", output "edcba"). Implemented models are:
 + Vanilla multi-layer LSTM RNN model. 
 + Vanilla encoder-decoder model. 
-+ Global-attentional encoder-decoder model. 
++ Global-attentional encoder-decoder model ([Vinyals et al.](https://arxiv.org/pdf/1412.7449v3.pdf))
 
 Run the program:
 ~~~~
