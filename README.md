@@ -1,5 +1,7 @@
 # seq2seq-chainer
 
+THIS REPO IS NO LONGER MAINTAINED. FOR A MORE STRUCTURED CODEBASE, VISIT [simple-nmt](https://github.com/khanhptnk/simple-nmt), IMPLEMENTED IN PYTORCH, which is very similar to Chainer. 
+
 Implementation of recurrent neural network (RNN) and seq2seq models in [Chainer](http://docs.chainer.org/en/stable/install.html). This repo is inspired by [Tal Baumel's cnn (now dynet) seq2seq notebook](https://talbaumel.github.io/attention/).
 
 The toy task is learning to reverse a string (i.e. given input "abcde", output "edcba"). Implemented models are:
